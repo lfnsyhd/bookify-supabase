@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-gradient {
+  background-color: #121212;
+  background: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgb(0, 0, 0) 100%);
+}
+
+.bg-custom {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.border-box-shadow {
+  box-shadow: inset 0 0 0 1px var(--essential-subdued, #818181);
+}
