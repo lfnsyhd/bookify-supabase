@@ -54,10 +54,6 @@ export interface FooterLoginCompTypes {
   textBold: string;
 }
 
-export interface NavigationCompTypes {
-  showSearch?: boolean;
-}
-
 export interface MainIconCompTypes {
   iconSize: number;
   frameSize: number;

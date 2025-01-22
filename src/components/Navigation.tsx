@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { NavigationCompTypes } from '../types/main'
 import MainIcon from './MainIcon'
 import { IoSearch } from 'react-icons/io5'
 import { useUser } from '../context/user'
