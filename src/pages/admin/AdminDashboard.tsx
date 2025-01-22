@@ -3,7 +3,7 @@ import { useUser } from '../../context/user'
 import UserLayout from '../../layouts/UserLayout';
 import BoxWidget from '../../components/BoxWidget';
 import { FaRegUser } from 'react-icons/fa';
-import { LuHandCoins, LuHandshake } from 'react-icons/lu';
+import { LuHandshake } from 'react-icons/lu';
 import { useEffect, useState } from 'react';
 import useGetAllBooks from '../../hooks/useGetAllBooks';
 import useGetAllUsers from '../../hooks/useGetAllUsers';

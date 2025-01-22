@@ -1,12 +1,8 @@
-import { useEffect } from 'react';
-import { useUser } from '../context/user';
 import useGetAllBorrowed from '../hooks/useGetAllBorrowed';
-import useGetAllUsers from '../hooks/useGetAllUsers';
 import moment from 'moment';
 import Book from './Book';
 import Button from './Button';
-import { FaHandHoldingUsd } from 'react-icons/fa';
-import { MdLibraryAddCheck, MdOutlineFactCheck, MdOutlineLibraryAddCheck } from 'react-icons/md';
+import { MdLibraryAddCheck } from 'react-icons/md';
 import usePostReturnBook from '../hooks/usePostReturnBook';
 
 const LendingsWidget = () => {

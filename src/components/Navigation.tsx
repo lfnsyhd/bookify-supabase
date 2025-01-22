@@ -6,7 +6,7 @@ import { useUser } from '../context/user'
 import { useLocation, useNavigate } from 'react-router-dom'
 import routes from '../router/routes'
 
-const Navigation = (props: NavigationCompTypes) => {
+const Navigation = () => {
   const { user } = useUser();
   const [keyword, setKeyword] = useState<string>('');
   const navigate = useNavigate();

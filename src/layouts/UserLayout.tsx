@@ -69,7 +69,7 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
       <LendingOverlay />
       <BookOverlay />
       <div className='p-[10px]'>
-        <Navigation showSearch={user ? true : false} />
+        <Navigation />
 
         <div className='flex gap-[10px]'>
           <Sidebar>
