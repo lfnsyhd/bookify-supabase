@@ -21,7 +21,7 @@ const AdminDashboard = () => {
 
   const updateTotals = () => {
     setTotalBook(booksData?.length || 0);
-    setTotalUser(usersData?.user?.length || 0);
+    setTotalUser(usersData?.length || 0);
     setTotalLending(borrowedData?.length || 0);
   };
 

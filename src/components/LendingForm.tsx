@@ -14,7 +14,7 @@ const LendingForm = () => {
 
   const handleSubmit = async () => {
     try {
-      await usePostBorrowBook(user?.id, currentBook?.id);
+      await usePostBorrowBook(user?.user_id, currentBook?.id);
       window.location.reload();
     } catch (error: any) {
       alert(error?.response?.data?.message ? error?.response?.data?.message : 'Unknown error, try again later.');

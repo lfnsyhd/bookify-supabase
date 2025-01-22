@@ -17,7 +17,7 @@ const UsersWidget = () => {
             </tr>
           </thead>
           <tbody>
-            {data && data?.user?.length > 0 && data?.user?.map((res: any, index: number) => (
+            {data && data?.length > 0 && data?.map((res: any, index: number) => (
               <tr className='bg-custom text-white border-t border-green-200' key={index}>
                 <td className='px-6 py-4 w-[10px]'>#{res?.id}</td>
                 <td className='px-6 py-4'>{res?.name}</td>

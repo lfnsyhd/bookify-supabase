@@ -34,10 +34,10 @@ const LendingsWidget = () => {
                 <td className='px-6 py-4'>
                   <Book
                     key={`book-` + index}
-                    id={res?.Book?.id}
-                    title={res?.Book?.title}
-                    author={res?.Book?.author}
-                    available={res?.Book?.available}
+                    id={res?.Books?.id}
+                    title={res?.Books?.title}
+                    author={res?.Books?.author}
+                    available={res?.Books?.available}
                     hideStatus={true}
                   />
                 </td>

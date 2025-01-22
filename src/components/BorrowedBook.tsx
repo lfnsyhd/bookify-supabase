@@ -5,7 +5,7 @@ import moment from 'moment';
 
 const BorrowedBook = () => {
   const { user } = useUser();
-  const { data } = useGetAllBorrowed(user?.id);
+  const { data } = useGetAllBorrowed(user?.user_id);
 
   return (
     <>
@@ -13,10 +13,10 @@ const BorrowedBook = () => {
         {data && data?.length > 0 && data.map((res: any, index: number) => (
           <Book
             key={index}
-            id={res?.Book?.id}
-            title={res?.Book?.title}
-            author={res?.Book?.author}
-            available={res?.Book?.available}
+            id={res?.Books?.id}
+            title={res?.Books?.title}
+            author={res?.Books?.author}
+            available={res?.Books?.available}
             showBorrower={true}
             borrower={res?.User?.name}
             startDate={moment(res?.createdAt).format('YYYY-MM-DD HH:mm')}
