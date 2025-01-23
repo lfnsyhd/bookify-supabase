@@ -1,8 +1,9 @@
+import { AiOutlineLoading } from 'react-icons/ai';
 import useGetAllUsers from '../hooks/useGetAllUsers';
 import moment from 'moment';
 
 const UsersWidget = () => {
-  const { data } = useGetAllUsers();
+  const { data, loading } = useGetAllUsers();
 
   return (
     <>
@@ -17,6 +18,19 @@ const UsersWidget = () => {
             </tr>
           </thead>
           <tbody>
+            {loading && (
+              <tr>
+                <td colSpan={4}>
+                  <div className='w-full mx-auto text-center flex items-center justify-center gap-3 h-[55px] bg-custom'>
+                    <div>
+                      <AiOutlineLoading size={15} color="#fff" className='animate-spin' />
+                    </div>
+                    <span className='text-white'>Tunggu sebentar</span>
+                  </div>
+                </td>
+              </tr>
+            )}
+
             {data && data?.length > 0 && data?.map((res: any, index: number) => (
               <tr className='bg-custom text-white border-t border-green-200' key={index}>
                 <td className='px-6 py-4 w-[10px]'>#{res?.id}</td>

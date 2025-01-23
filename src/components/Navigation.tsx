@@ -21,6 +21,19 @@ const Navigation = () => {
     }
   }, [title]);
 
+  const handleSearch = () => {
+    if(keyword.length > 0) {
+      return navigate(routes.explore + `?title=` + keyword);
+    }
+  }
+
+  const handleOnEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleSearch();
+    }
+  }
+
   return (
     <div className='min-h-[45px] w-full mb-2 flex justify-between items-center px-7'>
       <div className='w-[300px]'>
@@ -33,8 +46,9 @@ const Navigation = () => {
           placeholder='Buku apa yang ingin kamu cari?'
           value={keyword}
           onChange={(event) => setKeyword(event.target.value)}
+          onKeyDown={handleOnEnter}
         />
-        <button className='absolute right-[15px] top-[8px]' onClick={() => navigate(`${routes?.explore}${keyword.length > 0 ? '?title=' : ''}${keyword}`)}>
+        <button className='absolute right-[15px] top-[8px]' onClick={handleSearch}>
           <IoSearch size={25} color='#FFF' />
         </button>
       </div>

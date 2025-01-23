@@ -18,6 +18,7 @@ const Register = () => {
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
 
   useEffect(() => {
     if (user) {
@@ -31,9 +32,11 @@ const Register = () => {
 
   const handleRegister = async () => {
     setLoading(true);
+    setSuccess(false);
 
     try {
       await register(name, email, password);
+      setSuccess(true);
     } catch (error: any) {
       setError(error?.response?.data?.message ? error?.response?.data?.message : 'Unknown error. Try again later');
     } finally {
@@ -53,6 +56,14 @@ const Register = () => {
           message={error}
         />
       )}
+
+      {success && (
+        <Alert
+          type='success'
+          iconSize={18}
+          message={'Register sukses'}
+        />
+      )}
       <TextInput
         id='name'
         type="text"
@@ -61,6 +72,7 @@ const Register = () => {
         placeholder="Name"
         value={name}
         onUpdate={setName}
+        onEnter={handleRegister}
       />
       <TextInput
         id='email'
@@ -70,6 +82,7 @@ const Register = () => {
         placeholder="Email"
         value={email}
         onUpdate={setEmail}
+        onEnter={handleRegister}
       />
       <TextInput
         id='password'
@@ -79,6 +92,7 @@ const Register = () => {
         placeholder="Password"
         value={password}
         onUpdate={setPassword}
+        onEnter={handleRegister}
         isToggle={true}
       />
       <Button onClicked={handleRegister} isLoading={loading}>

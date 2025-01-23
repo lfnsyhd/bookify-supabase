@@ -5,6 +5,7 @@ import { FaCheck, FaFontAwesomeFlag } from 'react-icons/fa';
 const Alert = (props: AlertCompTypes) => {
   const types = ['danger', 'success', 'info'];
   const colors = ['red-700', 'green-700', 'blue-700'];
+  const hexColors = ['#B91C1C', '#15803D', '#1D4ED8'];
   const index = types.findIndex(value => value == props?.type);
   const iconColor = colors[index];
 
@@ -15,7 +16,12 @@ const Alert = (props: AlertCompTypes) => {
   ];
 
   return (
-    <div className='w-full bg-red-700 text-white text-[12px] flex items-center min-h-[50px] px-3 py-[10px] gap-3 capitalize'>
+    <div
+      className='w-full text-white text-[12px] flex items-center min-h-[50px] px-3 py-[10px] gap-3 capitalize bg-red-700'
+      style={{
+        backgroundColor: hexColors[index]
+      }}
+    >
       <span>
         {icons[index]}
       </span>

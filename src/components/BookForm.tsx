@@ -52,6 +52,7 @@ const BookForm = () => {
             type='text'
             value={title}
             onUpdate={setTitle}
+            onEnter={handleSubmit}
             isLabel={true}
             label='Title'
             placeholder='Title'
@@ -63,6 +64,7 @@ const BookForm = () => {
             type='text'
             value={author}
             onUpdate={setAuthor}
+            onEnter={handleSubmit}
             isLabel={true}
             label='Author'
             placeholder='Author'

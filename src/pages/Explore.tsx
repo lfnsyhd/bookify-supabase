@@ -1,17 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import UserLayout from '../layouts/UserLayout'
 import { useLocation } from 'react-router-dom';
 import RecommendationBook from '../components/BooksWidget';
 
 const Explore = () => {
   const location = useLocation();
-  const [title, setTitle] = useState<string>('');
-
-  useEffect(() => {
-    const queryParams = new URLSearchParams(location.search);
-    const queryTitle = queryParams.get('title');
-    setTitle(queryTitle || '');
-  }, [location.search]);
+  const queryParams = new URLSearchParams(location.search);
+  const queryTitle = queryParams.get('title');
+  const [title] = useState<string>(queryTitle || '');
 
   return (
     <>

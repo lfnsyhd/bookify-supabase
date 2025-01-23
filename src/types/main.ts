@@ -33,6 +33,7 @@ export interface TextInputCompTypes {
   placeholder: string;
   class?: string;
   isToggle?: boolean;
+  onEnter?: () => void;
   onUpdate?: (newValue: string) => void;
 }
 

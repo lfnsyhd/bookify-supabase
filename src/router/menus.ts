@@ -3,7 +3,7 @@ import routes from '../router/routes';
 export const menuUser = [
   {
     isActive: 'dashboard',
-    to: routes.home,
+    to: routes.user.dashboard,
     text: "Dashboard"
   },
   {
@@ -26,7 +26,7 @@ export const menuUser = [
 export const menuAdmin = [
   {
     isActive: 'dashboard',
-    to: routes.home,
+    to: routes.admin.dashboard,
     text: "Dashboard"
   },
   {

@@ -17,6 +17,7 @@ const Login = () => {
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
 
   useEffect(() => {
     if (user) {
@@ -30,9 +31,11 @@ const Login = () => {
 
   const handleLogin = async () => {
     setLoading(true);
-    
+    setSuccess(false);
+
     try {
       await login(email, password);
+      setSuccess(true);
     } catch (error: any) {
       setError(error?.response?.data?.message ? error?.response?.data?.message : 'Unknown error. Try again later');
     } finally {
@@ -53,6 +56,15 @@ const Login = () => {
             message={error}
           />
         )}
+
+        {success && (
+          <Alert
+            type='success'
+            iconSize={18}
+            message={'Login sukses'}
+          />
+        )}
+
         <TextInput
           id='email'
           type="email"
@@ -61,6 +73,7 @@ const Login = () => {
           placeholder="Email"
           value={email}
           onUpdate={setEmail}
+          onEnter={handleLogin}
         />
         <TextInput
           id='password'
@@ -71,6 +84,7 @@ const Login = () => {
           value={password}
           onUpdate={setPassword}
           isToggle={true}
+          onEnter={handleLogin}
         />
         <Button onClicked={handleLogin} isLoading={loading}>
           Masuk

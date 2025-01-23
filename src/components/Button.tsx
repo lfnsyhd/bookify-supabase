@@ -6,7 +6,7 @@ const Button = (props: ButtonCompTypes) => {
     <button
       onClick={() => props?.onClicked()}
       disabled={props?.isLoading}
-      className={`mt-2 bg-[#1ed760] w-full rounded-[30px] h-[45px] font-bold p-0 text-[14px] transition-all-300 ease-in-out hover:scale-[1.02] flex items-center justify-center text-center ` + props?.class}
+      className={`mt-2 bg-[#1ed760] w-full rounded-[30px] h-[45px] font-bold p-0 text-[14px] transition-all-300 ease-in-out hover:scale-[1.02] flex items-center justify-center text-center outline-none ` + props?.class}
     >
       {props?.isLoading && (
         <div className='mx-auto'>
