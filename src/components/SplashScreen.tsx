@@ -1,4 +1,3 @@
-import { AiOutlineLoading } from 'react-icons/ai'
 import MainIcon from './MainIcon'
 
 const SplashScreen = () => {
