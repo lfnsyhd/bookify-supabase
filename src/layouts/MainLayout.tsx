@@ -11,7 +11,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 700);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [location]);

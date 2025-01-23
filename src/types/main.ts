@@ -59,6 +59,7 @@ export interface FooterLoginCompTypes {
 export interface MainIconCompTypes {
   iconSize: number;
   frameSize: number;
+  boxShadow?: boolean;
 }
 
 export interface SidebarMenuCompTypes {
