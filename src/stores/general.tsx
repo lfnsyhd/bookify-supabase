@@ -16,6 +16,9 @@ interface GeneralStore {
   setIsModalFormBookOpen: (val: boolean) => void;
   setModalFormBookAction: (val: string) => void;
 
+  isMenuOpen: boolean;
+  setIsMenuOpen: (val: boolean) => void;
+
   resetGeneralStore: () => void;
 }
 
@@ -28,6 +31,8 @@ export const useGeneralStore = create<GeneralStore>()(
         currentIdLending: null,
         isModalFormBookOpen: false,
         modalFormBookAction: '',
+        isMenuOpen: true,
+        setIsMenuOpen: (val: boolean) => set({ isMenuOpen: val }),
         setIsLendingOpen: (val: boolean) => set({ isLendingOpen: val }),
         setIsModalFormBookOpen: (val: boolean) => set({ isModalFormBookOpen: val }),
         setModalFormBookAction: (val: string) => set({ modalFormBookAction: val }),
