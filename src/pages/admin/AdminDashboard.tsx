@@ -38,7 +38,7 @@ const AdminDashboard = () => {
           <h1 className='text-2xl font-bold mb-2 text-white'>Hi, {user?.name?.split(' ')[0]} !</h1>
           <span className='text-sm text-gray-300'>Here is our summary for you</span>
 
-          <div className='mt-4 grid lg:grid-cols-3 grid-cols-2 gap-3'>
+          <div className='mt-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
             <BoxWidget
               icon={<GrBook size={40} color='#FFF' />}
               title='Total Book'

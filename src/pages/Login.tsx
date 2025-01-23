@@ -32,6 +32,7 @@ const Login = () => {
   const handleLogin = async () => {
     setLoading(true);
     setSuccess(false);
+    setError('');
 
     try {
       await login(email, password);

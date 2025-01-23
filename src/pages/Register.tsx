@@ -33,6 +33,7 @@ const Register = () => {
   const handleRegister = async () => {
     setLoading(true);
     setSuccess(false);
+    setError('');
 
     try {
       await register(name, email, password);
