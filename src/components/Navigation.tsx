@@ -39,7 +39,7 @@ const Navigation = () => {
       <div className='w-[300px]'>
         <MainIcon iconSize={20} frameSize={40} />
       </div>
-      <div className='min-w-[430px] h-[45px] relative'>
+      <div className='min-w-[430px] h-[45px] relative hidden md:block'>
         <input
           type='text'
           className='w-full outline-none bg-[#121212] h-[45px] rounded-[25px] px-[2rem] text-white focus:border focus:border-[2.5px] focus:border-white text-[14px] border-[#121212] border-[2px]'

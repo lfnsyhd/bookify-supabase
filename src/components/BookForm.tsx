@@ -33,7 +33,7 @@ const BookForm = () => {
   }
 
   return (
-    <div className='fixed w-full h-screen bg-black bg-opacity-70 top-0 left-0 z-50 flex items-center justify-center'>
+    <div className='fixed w-full h-screen bg-black bg-opacity-70 top-0 left-0 z-50 flex items-center justify-center px-5 md:px-0'>
       <div className='relative bg-white w-full max-w-[470px] min-h-[25%] h-fit p-4 rounded-lg'>
         <div className="w-full flex justify-end">
           <button

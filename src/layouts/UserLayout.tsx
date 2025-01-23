@@ -71,7 +71,7 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
       <div className='p-[10px]'>
         <Navigation />
 
-        <div className='flex gap-[10px]'>
+        <div className='flex flex-col md:flex-row gap-[10px]'>
           <Sidebar>
             {user && user?.role == 'user' && menuUser?.map(((menu: any, index: number) => (
               <SidebarMenu
@@ -93,7 +93,7 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
               />
             )))}
           </Sidebar>
-          <div className='bg-[#121212] min-h-[100px] h-fit flex-1 rounded-xl p-7'>
+          <div className='bg-[#121212] min-h-[100px] h-fit flex-1 rounded-xl p-7 md:max-w-[calc(100%-300px)]'>
             {children}
           </div>
         </div>

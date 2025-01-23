@@ -7,7 +7,7 @@ const UsersWidget = () => {
 
   return (
     <>
-      <div className='mt-5 gap-3 rounded-xl overflow-hidden'>
+      <div className='mt-5 gap-3 rounded-xl overflow-x-auto max-h-[300px] md:max-h-none'>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500">
           <thead className="text-xs text-gray-700 uppercase bg-custom">
             <tr>
