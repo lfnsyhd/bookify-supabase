@@ -45,6 +45,7 @@ export interface AlertCompTypes {
 export interface ButtonCompTypes {
   children: React.ReactNode;
   class?: string;
+  isLoading?: boolean;
   onClicked: () => void;
 }
 

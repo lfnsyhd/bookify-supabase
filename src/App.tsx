@@ -18,8 +18,8 @@ import LendingList from './pages/admin/LendingList';
 
 function App() {
   return (
-    <MainLayout>
-      <Router>
+    <Router>
+      <MainLayout>
         <UserProvider>
           <Routes>
             <Route path="/" element={<Navigate to={routes.login} />} />
@@ -61,8 +61,8 @@ function App() {
             />
           </Routes>
         </UserProvider>
-      </Router>
-    </MainLayout>
+      </MainLayout>
+    </Router>
   );
 }
 

@@ -15,7 +15,7 @@ const Alert = (props: AlertCompTypes) => {
   ];
 
   return (
-    <div className='w-full bg-red-700 text-white text-[12px] flex items-center min-h-[50px] px-3 py-[10px] gap-3'>
+    <div className='w-full bg-red-700 text-white text-[12px] flex items-center min-h-[50px] px-3 py-[10px] gap-3 capitalize'>
       <span>
         {icons[index]}
       </span>

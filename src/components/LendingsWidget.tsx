@@ -47,7 +47,7 @@ const LendingsWidget = () => {
                 </td>
                 <td className='px-4 py-4'>
                   <Button
-                    class='!h-[30px] !text-[10px] w-[100px] !text-black flex items-center justify-center gap-1'
+                    class='!h-[30px] !text-[10px] !w-[120px] !text-black flex items-center justify-center gap-1'
                     onClicked={() => { usePostReturnBook(res?.id, res?.userId); window.location.reload() }}
                   >
                     <span>

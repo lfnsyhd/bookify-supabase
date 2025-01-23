@@ -16,7 +16,7 @@ const Login = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (user) {
@@ -25,22 +25,20 @@ const Login = () => {
       } else {
         navigate(routes.user?.dashboard);
       }
-    } else {
-      setTimeout(() => {
-        setLoading(false);
-      }, 300);
     }
   }, [user, navigate]);
 
   const handleLogin = async () => {
+    setLoading(true);
+    
     try {
       await login(email, password);
     } catch (error: any) {
       setError(error?.response?.data?.message ? error?.response?.data?.message : 'Unknown error. Try again later');
+    } finally {
+      setLoading(false);
     }
   }
-
-  if (loading) return null;
 
   return (
     <>
@@ -74,7 +72,7 @@ const Login = () => {
           onUpdate={setPassword}
           isToggle={true}
         />
-        <Button onClicked={handleLogin}>
+        <Button onClicked={handleLogin} isLoading={loading}>
           Masuk
         </Button>
         <FooterLogin

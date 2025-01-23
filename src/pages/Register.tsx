@@ -17,7 +17,7 @@ const Register = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (user) {
@@ -26,22 +26,20 @@ const Register = () => {
       } else {
         navigate(routes.user?.dashboard);
       }
-    } else {
-      setTimeout(() => {
-        setLoading(false);
-      }, 300);
     }
   }, [user, navigate]);
 
   const handleRegister = async () => {
+    setLoading(true);
+
     try {
       await register(name, email, password);
     } catch (error: any) {
       setError(error?.response?.data?.message ? error?.response?.data?.message : 'Unknown error. Try again later');
+    } finally {
+      setLoading(false);
     }
   }
-
-  if (loading) return null;
 
   return (
     <LoginLayout>
@@ -83,7 +81,7 @@ const Register = () => {
         onUpdate={setPassword}
         isToggle={true}
       />
-      <Button onClicked={handleRegister}>
+      <Button onClicked={handleRegister} isLoading={loading}>
         Daftar
       </Button>
       <FooterLogin

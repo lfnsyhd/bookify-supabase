@@ -5,14 +5,18 @@ import moment from 'moment';
 import Button from './Button';
 import usePostBorrowBook from '../hooks/usePostBorrowBook';
 import { useUser } from '../context/user';
+import { useState } from 'react';
 
 const LendingForm = () => {
   const { setIsLendingOpen, currentBook } = useGeneralStore();
+  const [loading, setLoading] = useState<boolean>(false);
   const { user } = useUser();
   let startDate = new Date();
   let dueDate = startDate.setDate(startDate.getDate() + 7);
 
   const handleSubmit = async () => {
+    setLoading(true);
+
     try {
       await usePostBorrowBook(user?.user_id, currentBook?.id);
       window.location.reload();
@@ -20,6 +24,7 @@ const LendingForm = () => {
       alert(error?.response?.data?.message ? error?.response?.data?.message : 'Unknown error, try again later.');
     } finally {
       setIsLendingOpen(false);
+      setLoading(false);
     }
   }
 
@@ -85,6 +90,7 @@ const LendingForm = () => {
           <div className='w-[200px] mx-auto'>
             <Button
               onClicked={handleSubmit}
+              isLoading={loading}
             >
               Ya, saya yakin
             </Button>

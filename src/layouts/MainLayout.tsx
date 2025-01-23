@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import SplashScreen from '../components/SplashScreen';
+import { useLocation } from 'react-router-dom';
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
+  const [loading, setLoading] = useState<boolean>(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    setLoading(true);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 700);
+
+    return () => clearTimeout(timer);
+  }, [location]);
+
   return (
     <>
       <div className='bg-black min-h-screen'>
-        {children}
+        {loading ? <SplashScreen /> : children}
       </div>
     </>
   )
