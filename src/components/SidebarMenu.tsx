@@ -10,13 +10,13 @@ const SidebarMenu = (props: SidebarMenuCompTypes) => {
       onClick={() => props?.to ? navigate(props?.to) : props?.onClicked }
     >
       <div className={`
-        h-[40px] w-[40px] flex items-center justify-center rounded-md group-hover:bg-[#1ed760]
+        h-[40px] w-[40px] flex items-center justify-center rounded-md group-hover:bg-[#1ed760] transition-all ease-in-out duration-300
         ${props?.isActive ? 'bg-[#1ed760]' : 'bg-white'}
       `}>
         {props?.icon}
       </div>
       <span
-        className={`group-hover:text-[#1ed760] ${props?.isActive ? 'text-[#1ed760]' : 'text-white'}`}
+        className={`group-hover:text-[#1ed760] transition-all ease-in-out duration-300 ${props?.isActive ? 'text-[#1ed760]' : 'text-white'}`}
       >
         {props?.text}
       </span>

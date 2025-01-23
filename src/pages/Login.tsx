@@ -62,7 +62,7 @@ const Login = () => {
           <Alert
             type='success'
             iconSize={18}
-            message={'Login sukses'}
+            message={'Login Success'}
           />
         )}
 

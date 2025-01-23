@@ -62,7 +62,7 @@ const Register = () => {
         <Alert
           type='success'
           iconSize={18}
-          message={'Register sukses'}
+          message={'Register Success'}
         />
       )}
       <TextInput
