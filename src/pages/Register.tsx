@@ -50,21 +50,23 @@ const Register = () => {
       <HeaderLogin>
         Daftar ke Bookify
       </HeaderLogin>
-      {error && (
-        <Alert
-          type='danger'
-          iconSize={18}
-          message={error}
-        />
-      )}
+      <div className='max-w-[280px]'>
+        {error && (
+          <Alert
+            type='danger'
+            iconSize={18}
+            message={error}
+          />
+        )}
 
-      {success && (
-        <Alert
-          type='success'
-          iconSize={18}
-          message={'Register Success'}
-        />
-      )}
+        {success && (
+          <Alert
+            type='success'
+            iconSize={18}
+            message={'Register Success'}
+          />
+        )}
+      </div>
       <TextInput
         id='name'
         type="text"
